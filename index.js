@@ -66,21 +66,33 @@ playRound = (playerSelection, computerSelection) => {
 let playerPoints = 0, computerPoints = 0;
 
 game = () => {
+    
     for (let i = 0; i < 5; i++) { //function to iterate through the 5 rounds
+        
         console.log(playRound(prompt("Rock, paper or scissors?").toLowerCase(), computerPlay())); 
+        
         if (playerTurn) {
+            
             playerPoints++;
+            
         } else if (computerTurn) {
+            
             computerPoints++;
         }
         //if they're both false it's a draw, neither gets a point 
     }
     console.log(`You won ${playerPoints} rounds, whereas the computer won ${computerPoints}. There were ${5 - playerPoints - computerPoints} ties.`)
+    
     if (playerPoints > computerPoints) {
+        
         console.log("You won the game! Refresh the page for a rematch.");
+        
     } else if (playerPoints === computerPoints) {
+        
         console.log("Good game, match was a tie. Refresh the page for a rematch.");
+        
     } else {
+        
         console.log("You lost the game! Refresh the page for a rematch.")
     }
 };
